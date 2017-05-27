@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>添加商品</title>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="resource/css/framework.css" />
+    <link type="text/css" rel="stylesheet" href="resource/css/main.css" />
+    	<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<script src="kindeditor/kindeditor.js"></script>
+		<script src="kindeditor/lang/zh_CN.js"></script>
+		<script>
+			KindEditor.ready(function(K) {
+				var editor = K.editor({
+					allowFileManager : true
+				});
+				
+				K('#chose_Img').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							showRemote : false,
+							imageUrl : K('#img_url').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#img_url').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+			});
+		</script>
+</head>
+<body>
+<div class="page">
+<!--header begin-->
+<header>
+	<div class="bigcontainer">
+		<div id="logo">
+			<a href="./">曼秀雷敦</a>
+		</div>
+		<div class="user">
+			<div class="ui inline labeled icon top right pointing dropdown">
+			<img class="ui avatar image" src="resource/images/avatar-default.gif">
+			欢迎，admin
+			<i class="dropdown icon"></i>
+				<div class="menu">
+					<a class="item" href="index.html"><i class="reply mail icon"></i>返回首页</a>
+					<a class="item" href="login.html"><i class="sign out icon"></i>注销登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- the main menu-->
+<div class="ui teal inverted menu fluid">
+	<div class="bigcontainer">
+		<div class="right menu">
+			<a class="item" href="index.html"><i class="home icon"></i>主页</a>
+			<a class="active item" href="./devices_list.html"><i class="sitemap icon"></i>添加商品</a>
+			<a class="item" href="change_goods.html"><i class="info icon"></i>修改商品</a>
+		</div>
+	</div>
+</div>
+<!--the main content begin-->
+	<div class="container">
+	<!--the content-->
+		<div class="ui grid">
+			<!--the vertical menu-->
+			<div class="four wide column">
+				<div class="verticalMenu">
+					<div class="ui vertical pointing menu fluid">
+  						<a class="active teal item" href="index.html">
+							<i class="rocket icon"></i> 主页
+  						</a>
+  						<a class="item" href="devices_list.html">
+    						<i class="settings icon"></i> 我的商品
+  						</a>
+  						<a class="item" href="change_goods.html">
+							<i class="terminal icon"></i> 修改商品
+  						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!--the newDevice form-->
+			<div class="twelve wide column">
+				
+				<div class="ui form fluid vertical segment">
+					<div name="form"  method="post">
+						<div class="two fields">
+                            <div class="field">
+                            	<label> <small>商品名ID</small></label>
+                                <div class="ui small left icon input">
+                                    <input type="number" placeholder="001-999">
+                                    <i class="ordered list icon"></i>
+                                    <div class="ui corner label">
+									</div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="two fields">
+                        	<div class="field">
+                            	<label>商品名称</label>
+                                <div class="ui small left icon input">
+                                	<input type="text" placeholder="给商品起个响亮的名字，不超过30个字符……">
+                                    <i class="cloud icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="two fields">
+                            <div class="field">
+                            	<label>商品质量</label>
+                                <div class="ui small left icon input">
+                                	<input type="text" placeholder="比如，150ml">
+                                    <i class="truck icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two fields">
+                        	<div class="field">
+                            	<label>中文介绍</label>
+                                <div class="ui small left icon input">
+                                	<input type="text" placeholder="">
+                                    <i class="text file outline icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two fields">
+                            <div class="field">
+                            	<label>英文介绍</label>
+                                <div class="ui small left icon input">
+                                	<input type="text">
+                                    <i class="subscript icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two fields">
+                            <div class="field">
+                            	<label>商品描述颜色</label>
+                                <div class="ui small left icon input">
+                                	<input type="text">
+                                    <i class="subscript icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two fields">
+                            <div class="field">
+                            	<label>商品图片路径</label>
+                                <div class="ui small left icon input">
+                                	<input type="text" id="img_url">
+                            	<input type="button" name="choseImg" id="chose_Img" value="选择图片" />
+                                    <i class="subscript icon"></i>
+                                </div>
+                            </div>
+                        </div>
+						<div class="two fields">
+                            <div class="field">
+                            	<label> <small>系列分类</small></label>
+                                <div class="ui small left icon input">
+                                    <input type="number" placeholder="1-8">
+                                    <i class="ordered list icon"></i>
+                                    <div class="ui corner label">
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    	<input class="ui small blue submit button" type="submit" value="立即添加">
+                    <a href="devices_list.html"><input class="ui small basic button" type="reset" value="取消"></a>
+					</div>
+					<!--the form end-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+//获取输入的值传入数据库中
+var avl=document.querySelectorAll('input');
+//avl是本页面所有input标签的一个集合
+var sub=avl[9];
+sub.onclick=function(){
+		goodsID=avl[0].value;
+		goodsName=avl[1].value;
+		goodsQuality=avl[2].value;
+		goodsChineseAbout=avl[3].value;
+		goodsEnglishAbout=avl[4].value;
+		goodsColor=avl[5].value;
+		goodsImgUrl=avl[6].value;
+		list_ID=avl[8].value;
+		console.log(goodsImgUrl);
+		var url_=goodsImgUrl.split('/php/mentholatum_DIY/fore-end/img',200)[1];
+		console.log(goodsImgUrl);	
+				ajax=new XMLHttpRequest();
+
+				ajax.open('post','application/manager.php',true);//打开
+				ajax.onreadystatechange=add;//测试是否添加成功
+				ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				ajax.send("username=&password=&goodsID="+goodsID+"&goodsName="+goodsName+"&goodsQuality="+goodsQuality+"&goodsChineseAbout="+goodsChineseAbout+"&goodsEnglishAbout="+goodsEnglishAbout+"&goodsColor="+goodsColor+"&goodsImgUrl="+url_+"&list_ID="+list_ID+"&C=add");
+	}
+	function add(){
+		if(ajax.readyState==4&&ajax.status==200){
+			result=ajax.responseText;
+			console.log(ajax.responseText);	
+			if(ajax.responseText==0){//判断商品ID是否重复添加
+			alert('添加成功');
+		}else{
+			alert('添加失败');
+		}
+		}
+	}
+
+</script>
+</body>
+</html>

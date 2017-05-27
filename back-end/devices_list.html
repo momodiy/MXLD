@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="renderer" content="webkit">
+		<!--<link rel="stylesheet" type="text/css" href="js/jquery-1.8.2.min.js"/>-->
+		<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+		<title>我的商品</title>
+		<style type="text/css">
+			* {
+				font-size: 12px;
+			}
+			
+			.sqllist {
+				width: 1000px;
+				height: auto;
+				/*padding-left: -100px;*/
+			}
+			
+			.sqllist>span {
+				display: inline-block;
+				width: 80px;
+				height: 60px;
+				border: 1px solid skyblue;
+				vertical-align: bottom;
+				line-height: 60px;
+			}
+			
+			.sqllist>span:nth-child(4),
+			.sqllist>span:nth-child(5) {
+				/*line-height: 10px;*/
+				width: 200px;
+			}
+			
+			.sqllist>span:nth-child(2) {
+				/*line-height: 10px;*/
+				width: 150px;
+			}
+			
+			.foot {
+				/*border: 1px solid;*/
+				position: fixed;
+				background: white;
+				width: 100%;
+				bottom: -5px;
+				height: 80px;
+				font-size: 9px;
+				text-align: center;
+			}
+			
+			.foot img {
+				position: fixed;
+				left: 0px;
+				float: left;
+			}
+			
+			.foot p {
+				position: fixed;
+				left: 45%;
+			}
+			
+			#sqli {
+				margin: auto;
+			}
+		</style>
+		<link type="text/css" rel="stylesheet" href="resource/css/framework.css" />
+		<link type="text/css" rel="stylesheet" href="resource/css/main.css" />
+	</head>
+
+	<body>
+		<!--header begin-->
+		<header>
+			<div class="bigcontainer">
+				<div id="logo">
+					<a href="./">商品中心</a>
+				</div>
+				<div class="user">
+					<div class="ui inline labeled icon top right pointing dropdown">
+						<img class="ui avatar image" src="resource/images/avatar-default.gif"> 欢迎：admin
+						<i class="dropdown icon"></i>
+						<div class="menu">
+							<a class="item" href="http://www.yeelink.net"><i class="reply mail icon"></i>返回首页</a>
+							<a class="item" href="login.html"><i class="sign out icon"></i>注销登录</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- the main menu-->
+		<div class="ui teal inverted menu fluid">
+			<div class="bigcontainer">
+				<div class="right menu">
+					<a class="item" href="./index.html"><i class="home icon"></i>主页</a>
+					<a class="active item" href="./devices_list.html"><i class="sitemap icon"></i>查看商品</a>
+					<a class="item" href="change_goods.html"><i class="info icon"></i>修改商品</a>
+				</div>
+			</div>
+		</div>
+		<!--共用部分分界线-->
+		<!--the main content begin-->
+		<div class="container">
+			<!--the content-->
+			<div class="ui grid">
+				<!--the vertical menu-->
+				<div class="four wide column">
+					<div class="verticalMenu">
+						<div class="ui vertical pointing menu fluid">
+							<a class="item" href="./add.html">
+								<i class="add icon"></i> 添加新商品
+							</a>
+							<a class="active teal item" href="devices_list.html">
+								<i class="settings icon"></i> 我的商品
+							</a>
+							<a class="item" href="change_goods.html">
+								<i class="terminal icon"></i> 修改商品
+							</a>
+						</div>
+					</div>
+				</div>
+				<!--the Devicelist-->
+				<div class="twelve wide column">
+					<div class="pageHeader">
+						<div class="segment">
+							<h3 class="ui dividing header">
+  							<i class="large settings icon"></i>
+  							<div class="content">
+    							我的商品
+    							<div class="sub header">所有商品都在这里</div>
+  							</div>
+						</h3>
+						</div>
+					</div>
+
+					<div claas="table_wrap" style="text-align: center;">
+						<div class="list">
+
+						</div>
+						<div class="changePageBtn">
+							<span id="last">上一页</span>
+							<span id="next">下一页</span>
+							<p>第<span id="thispage"></span>页，共<span id="pageNum"></span>页</p>
+						</div>
+					</div>
+
+					<!--共用部分分界线-->
+					<!--footer begin-->
+
+					<!--<script type="text/javascript" src="resource/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="resource/javascript/framework.js"></script>-->
+					<script type="text/javascript">
+						var ajax = null;
+						var EveryPage = 10; //每页展示条数
+						var dataLength = ''; //数据总条数
+						var pageNum = ''; //总页数
+						var thispage = 1;
+
+						var ctext = '';
+						var id = '';
+						window.onload = loadInfo;
+						$('#last').click(function() {
+							if(thispage > 1) {
+								thispage--;
+								loadInfo();
+							} else {
+								alert('已经是第一页');
+							}
+
+						});
+						$('#next').click(function() {
+							if(thispage < pageNum) {
+								thispage++;
+								loadInfo();
+							} else {
+								alert('已经是最后一页');
+							}
+						});
+
+						function loadInfo() {
+
+							//创建通道
+							ajax = new XMLHttpRequest();
+							//				添加监听事件
+							ajax.onreadystatechange = show;
+
+							ajax.open('post', 'application/new_file.php', true);
+							ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+							ajax.send("thispage=" + thispage + "&con=show");
+							//							ajax.send("goodsID=&goodsName=&goodsQuality=&goodsChineseAbout=&goodsEnglishAbout=&goodsColor=&goodsImgUrl=&list_ID=&C=select");
+						}
+
+						function show() {
+							if(ajax.readyState == 4 && ajax.status == 200) {
+								var str = ajax.responseText;
+								console.log(str);
+								var substr_ = str.split("^^")[0];
+								dataLength = str.split("^^")[1];
+								pageNum = Math.ceil(dataLength / EveryPage);
+								$('#thispage').html(thispage);
+								$('#pageNum').html(pageNum);
+								//console.log(allnum);
+								var obj = eval('(' + substr_ + ')');
+
+								var htmlString = "<div class='sqllist'><span>商品ID</span><span>商品名称</span><span>商品含量</span><span>中文介绍</span><span>英文介绍</span><span>介绍颜色</span><span>图片路径</span><span>系列编号</span>";
+								for(var i = 0; i < obj.data.length; i++) {
+									htmlString += "<div class='sqllist'><span>" + obj.data[i]['goodsID'] + "</span><span>" + obj.data[i]['goods_name'] + "</span><span>" + obj.data[i]['goods_quality'] + "</span><span>" + obj.data[i]['goods_chinese_about'] + "</span><span>" + obj.data[i]['goods_english_about'] + "</span><span>" + obj.data[i]['goods_color'] + "</span><span>" + obj.data[i]['goods_imgurl'] + "</span><span>" + obj.data[i]['list_ID'] + "</span></div>";
+									//						document.write(htmlString);
+								}
+//								var changePage = "<div class='cpage'><div>上一页</div><div>&nbsp;&nbsp;&nbsp;&nbsp;</div><div>下一页</div></div>";
+								document.querySelector(".list").innerHTML = htmlString;
+//								document.querySelector(".list").innerHTML += changePage;
+							}
+						}
+						$('.cpage div:eq(0)').click(function() {
+							if(pageNum > 1 && pageNum < objnum) {
+								pageNum--;
+								alert('2');
+								loadInfo();
+							}
+							alert('1');
+						});
+						$('.cpage div:eq(1)').click(function() {
+							if(pageNum >= 1 && pageNum < objnum) {
+								pageNum++;
+								loadInfo();
+								alert("2");
+							}
+						});
+					</script>
+	</body>
+
+</html>

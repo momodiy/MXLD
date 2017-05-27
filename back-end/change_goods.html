@@ -1,0 +1,319 @@
+<!--待实现功能：不允许相同ID的产品被添加-->
+<!doctype html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="renderer" content="webkit">
+		<title>管理首页</title>
+		<style type="text/css">
+			/**{
+			overflow: hidden;
+		}*/
+			
+			* {
+				font-size: 11px;
+			}
+			
+			.sqllist {
+				width: 1300px;
+				height: auto;
+			}
+			
+			.sqllist>span,
+			.sqllist>button {
+				display: inline-block;
+				width: 80px;
+				height: 60px;
+				border: 1px solid skyblue;
+				vertical-align: bottom;
+				line-height: 60px;
+			}
+			
+			.sqllist>button {
+				line-height: 0px;
+				background: blueviolet;
+				color: white;
+				margin: 10px 16px;
+				width: 50px;
+				height: 30px;
+			}
+			
+			.sqllist>span:nth-child(4),
+			.sqllist>span:nth-child(5) {
+				width: 200px;
+			}
+			
+			.sqllist>span:nth-child(2) {
+				width: 150px;
+			}
+			
+			.changewrap {
+				display: none;
+				background: url(images/update.jpg);
+				opacity: 0.8;
+				text-align: center;
+				line-height: 30px;
+				position: fixed;
+				z-index: 20;
+				width: 300px;
+				height: 400px;
+				top: 100px;
+				left: 100px;
+				margin: auto;
+				margin-top: 20px;
+			}
+			
+			.foot {
+				/*border: 1px solid;*/
+				position: fixed;
+				width: 100%;
+				bottom: -5px;
+				height: 80px;
+				font-size: 9px;
+				text-align: center;
+			}
+			
+			.foot img {
+				position: fixed;
+				left: 0px;
+				float: left;
+			}
+			
+			.foot p {
+				position: fixed;
+				left: 45%;
+			}
+			/*.changePageBtn{
+				position: fixed;
+				right: 200px;
+				bottom: 100px;
+				width: 100px;
+				height: 30px;
+				
+			}*/
+			.changePageBtn>span{
+				display: inline-block;
+				/*border: 1px solid fuchsia;*/
+				
+			}		
+			#sqli{
+				margin: auto;
+			}
+		</style>
+		<link type="text/css" rel="stylesheet" href="resource/css/framework.css" />
+		<link type="text/css" rel="stylesheet" href="resource/css/main.css" />
+		<script type="text/javascript"src="../../1109/jQuery/jquery-2.1.3.js"></script>
+	</head>
+
+	<body>
+
+		
+		<div class="changewrap">
+			<p><span>商品名称:</span><input type="text" name="" id="" value="" class="ctext" /></p>
+			<p><span>商品含量:</span><input type="text" name="" id="" value="" class="ctext" /></p>
+			<p><span>中文介绍:</span><input type="text" name="" id="" value="" class="ctext" /></p>
+			<p><span>英文介绍:</span><input type="text" name="" id="" value="" class="ctext" /></p>
+			<p><span>介绍颜色:</span><input type="text" name="" id="" value="" class="ctext" /></p>
+			<!--<p><span>图片路径:</span><input type="text" name="" id="" value="" class="ctext" /></p>-->
+			<p><span>系列分类:</span><input type="text" name="" id="" value="" class="ctext" /></p>
+			<input type="button" name="chang" id="chang" value="提交" />
+			<input type="button" name="chang" id="Back" value="取消" />
+		</div>
+		<div class="page">
+			<!--header begin-->
+			<header>
+				<div class="bigcontainer">
+					<div id="logo">
+						<a href="./">曼秀雷敦</a>
+					</div>
+					<div class="user">
+						<div class="ui compact notif menu">
+							<a class="item">
+								<i class="mail large icon"></i>
+								<span class="circular floating ui small red label" id="messageNum"> 0 </span>
+							</a>
+						</div>
+						<div class="ui inline labeled icon top right pointing dropdown">
+							<img class="ui avatar image" src="resource/images/avatar-default.gif"> 欢迎:
+							<span>admin</span>
+						</div>
+					</div>
+			</header>
+			<!-- the main menu-->
+			<div class="ui teal inverted menu">
+				<div class="bigcontainer">
+					<div class="right menu">
+						<a class="item" href="./index.html"><i class="home icon"></i>主页</a>
+						<a class="item" href="./devices_list.html"><i class="sitemap icon"></i>查看商品</a>
+						<a class="active item" href="#"><i class="cloud icon"></i>修改商品</a>
+						<!--<a class="item" href="./user_profile.html"><i class="info icon"></i>账户</a>-->
+					</div>
+				</div>
+			</div>
+			<div claas="table_wrap" style="text-align: center;">
+				<div class="list">
+
+				</div>
+						<div class="changePageBtn">
+			<span id="last">上一页</span>
+			<span id="next">下一页</span>
+			<p>第<span id="thispage"></span>页，共<span id="pageNum"></span>页</p>
+		</div>
+			</div>
+		</div>
+			<!--<div class="foot">
+<img src="resource/images/logo.png"/>
+<p>&copy; 2020 曼秀雷敦化妆品有限公司, 版权所有 <a href="#" target="_blank">(qc)</a><br />
+<a href="#" target="_blank">鲁ICP备12022271号</a></p>
+	</div>	-->
+			<!--<footer>
+				<div id="copyrights">
+					<div class="inset">
+						<div class="bigcontainer">
+							<div class="fl">
+								<img src="resource/images/logo.png" />
+								<p>&copy; 2020 曼秀雷敦化妆品有限公司, 版权所有
+									<a href="#" target="_blank">(qc)</a><br />
+									<a href="#" target="_blank">鲁ICP备12022271号</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>-->
+			<script type="text/javascript">
+				$('#last').click(function(){
+					if(thispage>1){
+					thispage--;
+					loadInfo();
+					}else{
+						alert('已经是第一页');
+					}					
+						
+				});
+				$('#next').click(function(){
+					if(thispage<pageNum){
+					thispage++;						
+					loadInfo();
+					}else{
+						alert('已经是最后一页');
+					}					
+				});
+				var ajax = null;
+				var ctext = '';
+				var id = '';
+				window.onload = loadInfo;
+
+				var EveryPage=10;//每页展示条数
+				var dataLength='';//数据总条数
+				var pageNum='';//总页数
+				var thispage=1;
+				
+				function loadInfo() {
+
+					//创建通道
+					ajax = new XMLHttpRequest();
+					//				添加监听事件
+					ajax.onreadystatechange = show;
+
+					ajax.open('post', 'application/new_file.php', true);
+					ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					ajax.send("thispage="+thispage+"&con=show");
+				}
+
+				function show() {
+					if(ajax.readyState == 4 && ajax.status == 200) {
+						var str=ajax.responseText;
+						console.log(str);
+						var substr_=str.split("^^")[0];
+						dataLength=str.split("^^")[1];
+						pageNum=Math.ceil(dataLength/EveryPage);
+						$('#thispage').html(thispage);
+						$('#pageNum').html(pageNum);
+//						console.log(allnum);
+						$('#messageNum').text(dataLength);
+						var obj = eval('(' +substr_ + ')');
+
+						var htmlString = "<div class='sqllist' id='sqli'><span>商品ID</span><span>商品名称</span><span>商品含量</span><span>中文介绍</span><span>英文介绍</span><span>介绍颜色</span><span>图片路径</span><span>系列编号</span><span>修改按钮</span><span>删除按钮</span>";
+						for(var i = 0; i < obj.data.length; i++){						
+							htmlString += "<div class='sqllist' id='sqli'><span>" + obj.data[i]['goodsID'] + "</span><span>" + obj.data[i]['goods_name'] + "</span><span>" + obj.data[i]['goods_quality'] + "</span><span>" + obj.data[i]['goods_chinese_about'] + "</span><span>" + obj.data[i]['goods_english_about'] + "</span><span>" + obj.data[i]['goods_color'] + "</span><span>" + obj.data[i]['goods_imgurl'] + "</span><span>" + obj.data[i]['list_ID'] + "</span><button class='update' id=" + obj.data[i]['goodsID'] + ">修改</button><button class='del' id=" + obj.data[i]['goodsID'] + ">删除</button></div>";
+						}
+
+						document.querySelector(".list").innerHTML = htmlString;
+
+						qq = document.querySelectorAll('.update');
+						pp = document.querySelectorAll('.del');
+						for(var i = 0; i < qq.length; i++) {
+							qq[i].addEventListener('click', update, false);
+							pp[i].addEventListener('click', del, false);
+						}
+						}
+					}
+				
+				//修改信息
+				function update() {
+					var back = document.getElementById('Back');
+					var chang = document.getElementById('chang');
+					id = this.id;
+					var CDIV = document.getElementsByClassName('changewrap')[0];
+					CDIV.style.display = 'block';
+					//					console.log(CDIV);
+					//					console.log(id);
+					back.addEventListener('click', function() {
+						location.assign(location); //刷新页面，重新隐藏修改窗口
+					}, false);
+					ctext = document.querySelectorAll('.ctext');
+					//					console.log(chang);
+					chang.addEventListener('click', cc, false);
+					//					chang.onclick = function() {console.log('jkdsfh');}
+
+				}
+				//				删除信息
+				function del() {
+					console.log(this.id)
+					var id = this.id;
+					ajax = new XMLHttpRequest();
+					ajax.open('post', 'application/manager.php', true); //打开
+					ajax.onreadystatechange = function() {
+						console.log(ajax.responseText);
+					};
+					console.log(ajax.responseText);
+					ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					ajax.send("goodsID=&del_id=" + id + "&goodsName=&goodsQuality=&goodsChineseAbout=&goodsEnglishAbout=&goodsColor=&goodsImgUrl=&list_ID=&C=del");
+					console.log('html_删除成功');
+					alert('第'+id+'条数据删除成功');
+					console.log(id);
+					location.assign(location);
+				}
+
+				function cc() {
+					console.log("sdfasd");
+					var c1 = ctext[0].value;
+					var c2 = ctext[1].value;
+					var c3 = ctext[2].value;
+					var c4 = ctext[3].value;
+					var c5 = ctext[4].value;
+					var c6 = ctext[5].value;
+					var c7 = ctext[6].value;
+					//						alert(1);
+
+					//						ajax请求后台数据
+					ajax = new XMLHttpRequest();
+					ajax.open('post', 'application/manager.php', true); //打开
+					console.log(ajax.responseText);
+					ajax.onreadystatechange = function() {
+						console.log(ajax.responseText);
+					}
+					ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					ajax.send("goodsID=" + id + "&goodsName=" + c1 + "&goodsQuality=" + c2 + "&goodsChineseAbout=" + c3 + "&goodsEnglishAbout=" + c4 + "&goodsColor=" + c5 + "&goodsImgUrl=" + c6 + "&list_ID=" + c7 + "&C=update");
+
+					//						console.log(phoneNum);
+					//						location.assign(location);
+				}
+			</script>
+
+	</body>
+
+</html>

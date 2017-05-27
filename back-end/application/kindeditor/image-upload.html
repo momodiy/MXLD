@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ImageDialog Examples</title>
+		<link rel="stylesheet" href="themes/default/default.css" />
+		<script src="kindeditor.js"></script>
+		<script src="lang/zh_CN.js"></script>
+		<script>
+			KindEditor.ready(function(K) {
+				var editor = K.editor({
+					allowFileManager : true
+				});
+				
+				K('#image3').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							showRemote : false,
+							imageUrl : K('#url3').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#url3').val(url);
+								editor.hideDialog();
+							}
+						});
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>本地上传</p>
+		<p></p>
+		<p><input type="text" id="url3" value="" /> <input type="button" id="image3" value="选择图片" /></p>
+		<input type="button" name="" id="aa" value="截取路径" />
+	</body>
+	<script type="text/javascript">
+		var bb=document.getElementById('aa');
+		bb.onclick=function  () {
+			var cc=document.getElementById('url3').value;
+			console.log(cc.split("/Rose蛋糕店",200)[1]);
+			
+			
+		}
+	</script>
+</html>

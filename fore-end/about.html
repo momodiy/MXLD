@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>曼秀雷敦首页</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<style type="text/css">
+			body {
+				background: #eee;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #000;
+				margin: 0;
+				padding: 0;
+				/*text-align: left;*/
+			}
+			
+			.swiper-container {
+				width: 100%;
+				height: 520px;
+				margin: 20px auto;
+				/*border: 1px solid red;*/
+			}
+			
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+				width: 60%;
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+			
+			.swiper-slide:nth-child(2n) {
+				width: 40%;
+			}
+			
+			.swiper-slide:nth-child(3n) {
+				width: 20%;
+			}
+			
+			.swiperwrap {
+				width: 100%;
+				height: 420px;
+				margin-bottom: 100px;
+				border: 1pxs solid gold;
+			}
+			
+			.btn_ {
+				width: 1000px;
+				height: 50px;
+				/*border: 1PX solid #A8D6FE;*/
+			}
+			
+			.btn_ a {
+				color: rgb(72, 141, 206);
+				float: right;
+				/*text-align: right;*/
+				display: inline-block;
+				margin-left: 15px;
+				text-decoration: none;
+			}
+			
+			.wrap .img2 {
+				/*border: 1pxs solid chartreuse;*/
+				width: 830px;
+				height: 570px;
+				position: relative;
+				text-align: left;
+				/*margin-bottom: 150px;*/
+			}
+			
+			.img2>div {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+			}
+			
+			.text1 {
+				text-align: left;
+			}
+			
+			#qualityImg {
+				margin-top: 70px;
+			}
+			
+			.swiper-slide img {
+				/*width: 100%;
+				height: 100%;*/
+			}
+		</style>
+	</head>
+
+	<body ondragstart="return false">
+		<div class="wrap">
+			<div class="head">
+				<div class="headTop">
+					<img src="img/logo.jpg" id="logo" />
+					<div id="headLink">
+						<span><a href="advert.html">广告片欣赏</a></span>
+						<span><a href="about.html">关于曼秀雷敦</a></span>
+						<span><a href="global.html" id="headImgwrap"><img src="img/head001.png" id="headImg1"/>全球曼秀雷敦</a></span>
+						<span id="headChose"><a href="#">曼秀雷敦家族网站&nbsp;&nbsp;▾
+							<ul id="headlist"><li>肌研护肤系列</li><li>男士护肤系列</li><li>乐肤洁抗痘系列</li><li>乐敦护眼系列</li></ul></a></span>
+					</div>
+				</div>
+			</div>
+			<!--导航栏-->
+			<div class="navwrap">
+				<div id="nav">
+					<ul class="nav nav-pills ">
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								男士 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">洁面</a>
+								</li>
+								<li>
+									<a href="#">爽肤</a>
+								</li>
+								<li>
+									<a href="#">润肤</a>
+								</li>
+								<li>
+									<a href="#">沐浴</a>
+								</li>
+								<li>
+									<a href="#">特殊护理</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								肌研 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">极润保湿</a>
+								</li>
+								<li>
+									<a href="#">白润美白</a>
+								</li>
+								<li>
+									<a href="#">敏感肌呵护</a>
+								</li>
+								<li>
+									<a href="#">卵肌去角质</a>
+								</li>
+								<li>
+									<a href="#">弹力肌紧致</a>
+								</li>
+								<li>
+									<a href="#">肌呼吸焕颜</a>
+								</li>
+								<li>
+									<a href="#">透明质酸洗颜</a>
+								</li>
+								<li>
+									<a href="#">身体护理</a>
+								</li>
+								<li>
+									<a href="#">化妆品专供</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								新碧 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">日用防晒</a>
+								</li>
+								<li>
+									<a href="#">户外防晒</a>
+								</li>
+								<li>
+									<a href="#">儿童防晒</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								乐肤洁 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">抗痘系列</a>
+								</li>
+								<li>
+									<a href="#">控油系列</a>
+								</li>
+
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								护唇 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">天然果汁</a>
+								</li>
+								<li>
+									<a href="#">缤纷什果汁</a>
+								</li>
+								<li>
+									<a href="#">丰盈修护</a>
+								</li>
+								<li>
+									<a href="#">基础护理*儿童</a>
+								</li>
+								<li>
+									<a href="#">高纯羊毛脂</a>
+								</li>
+								<li>
+									<a href="#">水彩粉红</a>
+								</li>
+								<li>
+									<a href="#">自然变色</a>
+								</li>
+								<li>
+									<a href="#">甜吻润唇球</a>
+								</li>
+								<li>
+									<a href="#">薄荷*高保湿</a>
+								</li>
+								<li>
+									<a href="#">花果</a>
+								</li>
+								<li>
+									<a href="#">男士润唇膏</a>
+								</li>
+								<li>
+									<a href="#">美容液*唇膜</a>
+								</li>
+								<li>
+									<a href="#">透明淡彩</a>
+								</li>
+								<li>
+									<a href="#">淡彩啫喱</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								乐敦 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">新乐敦</a>
+								</li>
+								<li>
+									<a href="#">乐敦清</a>
+								</li>
+								<li>
+									<a href="#">红乐敦</a>
+								</li>
+								<li>
+									<a href="#">小乐敦</a>
+								</li>
+								<li>
+									<a href="#">乐敦莹</a>
+								</li>
+								<li>
+									<a href="#">乐敦康</a>
+								</li>
+								<li>
+									<a href="#">隐形眼镜护理液(保湿型)</a>
+								</li>
+								<li>
+									<a href="#">隐形眼镜护理液(冰凉型)</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#">薄荷膏</a>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								其他产品 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">天然植物洁面</a>
+								</li>
+								<li>
+									<a href="#">草本美容液面霜</a>
+								</li>
+								<li>
+									<a href="#">花语舒缓润手霜</a>
+								</li>
+								<li>
+									<a href="#">Hand Veil润手霜</a>
+								</li>
+								<li>
+									<a href="#">润肤乳液</a>
+								</li>
+								<li>
+									<a href="#">乐碧止汗香体</a>
+								</li>
+								<li>
+									<a href="#">欧治洁面</a>
+								</li>
+								<li>
+									<a href="#">伤风通</a>
+								</li>
+								<li>
+									<a href="#">医用退热贴</a>
+								</li>
+								<li>
+									<a href="#">摩擦膏</a>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="swiperwrap">
+
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<!--<div class="swiper-slide"><img src="img/lb1.png" /></div>
+						<div class="swiper-slide"><img src="img/lb2.png" /></div>
+						<div class="swiper-slide"><img src="img/lb3.png" /></div>
+						<div class="swiper-slide"><img src="img/lb4.png" /></div>
+						<div class="swiper-slide"><img src="img/lb5.png" /></div>
+						<div class="swiper-slide"><img src="img/lb6.png" /></div>
+						<div class="swiper-slide"><img src="img/lb7.png" /></div>
+						<div class="swiper-slide"><img src="img/lb8.png" /></div>
+						<div class="swiper-slide"><img src="img/lb9.png" /></div>
+						<div class="swiper-slide"><img src="img/lb10.png" /></div>
+						<div class="swiper-slide"><img src="img/lb11.png" /></div>
+						<div class="swiper-slide"><img src="img/lb12.png" /></div>
+						<div class="swiper-slide"><img src="img/lb13.png" /></div>
+						<div class="swiper-slide"><img src="img/lb14.png" /></div>-->
+						<!--<div class="swiper-slide"><img src="img/lb15.png" /></div>
+						<div class="swiper-slide"><img src="img/lb16.png" /></div>
+						<div class="swiper-slide"><img src="img/lb17.png" /></div>
+						<div class="swiper-slide"><img src="img/lb18.png" /></div>
+						<div class="swiper-slide"><img src="img/lb19.png" /></div>
+						<div class="swiper-slide"><img src="img/lb20.png" /></div>
+						<div class="swiper-slide"><img src="img/lb21.png" /></div>
+						<div class="swiper-slide"><img src="img/lb22.png" /></div>
+						<div class="swiper-slide"><img src="img/lb23.png" /></div>
+						<div class="swiper-slide"><img src="img/lb24.png" /></div>
+						<div class="swiper-slide"><img src="img/lb25.png" /></div>
+						<div class="swiper-slide"><img src="img/lb26.png" /></div>-->
+						<div class="swiper-slide"><img src="img/aboutreel0.jpg" /></div>
+						<div class="swiper-slide"><img src="img/aboutreel1.jpg" /></div>
+						<div class="swiper-slide"><img src="img/aboutreel2.jpg" /></div>
+						<div class="swiper-slide"><img src="img/aboutreel3.jpg" /></div>
+						<!--<div class="swiper-slide"><img src="img/aboutreel4.png" /></div>-->
+						<!--<div class="swiper-slide"><img src="img/aboutreel5.png" /></div>-->
+
+					</div>
+				</div>
+			</div>
+			<div class="btn_">
+
+				<a href="#qualityImg" target="_self">品牌故事</a>
+				<a href="#aboutit" target="_self">企业简介</a>
+				<a href="#mission" target="_self">企业宗旨</a>
+			</div>
+			<img src="img/aboutbg1.gif" id="mission" />
+			<div class="img2" id="aboutit" style="text-align:-moz-left;text-align: -webkit-left;text-align: left;">
+				<div id="text1">
+					<p>曼秀雷敦自1889年创立以来，分支机构遍布全球多个地区。</p>
+					<p>其中，曼秀雷敦（中国）药业有限公司于1991年在广东省中山市成立，</p>
+					<p>其严谨的生产队伍及先进的生产设备，成为曼秀雷敦服务广大中国消费者的有力支持。</p>
+				</div>
+				<img src="img/aboutbg2.jpg" />
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;曼秀雷敦（中国）药业有限公司，于1991年10月建成投产，总投资额逾一亿元人民币，扩建后总建筑面积达12,440平方米，且厂内各种生产设备均由美国曼秀雷敦公司及日本乐敦药厂引进。同时，为了确保能于最卫生、最安全的工作环境下生产出稳定高质量的产品，厂房及高科技无菌密封式的生产车间，如药物药品车间（眼药水车间和软膏剂车间）、医疗器械车间、化妆品车间（润唇膏车间和抗晒乳液车间），均符合GMP要求。厂房内还设有高科技研发部门，为产品品质奠定了基础。</p>
+			</div>
+			<img src="img/aboutbg3.png" id="qualityImg" />
+			<img src="img/aboutbg4.png" />
+			<!--底部-->
+			<div class="footwrap">
+				<div class="topfoot">
+
+					<div class="TFleft">
+						<img src="img/footleft1.png" id="foot_img1" />
+						<div id="footcon">
+							<span id="tellus">联系我们</span>
+							<img src="img/footleft2.gif" id="foot_img2" />
+						</div>
+						<div id="foot_left_wrap">
+							<div class="flw1">
+								<p>
+									<span>产品咨询热线</span>
+								</p>
+								<p>
+									<span>人工咨询时间</span>
+								</p>
+								<p>
+									<span>客&nbsp;&nbsp;服&nbsp;&nbsp;邮&nbsp;&nbsp;箱</span>
+								</p>
+							</div>
+							<div class="flw2">
+								<p>
+									<span>400-700-7708</span>
+								</p>
+								<p>
+									<span>周一至周五（节假日除外）9:00-12:00,13:00-16-00</span>
+								</p>
+								<p>
+									<span>mcl-cs@mentholatum.com.cn</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="TFright">
+						<div class="blt1">
+							<span class="focus"><img src="img/footright1.png"/></span>
+							<span class="focusus">关注我们<img src="img/footright2.gif"/>
+						</span>
+						</div>
+						<div class="blt2">
+							<div class="blt21">
+								<p><span><img src="img/weibo_logo.gif"/></span>关注微博</p>
+								<img src="img/weibo_code.jpg" />
+							</div>
+							<div class="blt22">
+								<p><span><img src="img/weixin_iogo.gif"/></span>关注微信</p>
+								<img src="img/weixin_code.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="botfoot">
+					<p id="footAbout1">2014-2016曼秀雷敦公司版权所有粤ICP备12090187|联系我们</p>
+					<p id="footAbout2"><img src="img/icp.png" />粤公网安备44200002005188号</p>
+				</div>
+
+			</div>
+			<script type="text/javascript" src="js/public.js"></script>
+			<script type="text/javascript">
+				var swiper = new Swiper('.swiper-container', {
+					//      pagination: '.swiper-pagination',
+					slidesPerView: 'auto',
+					//						<div class="swiper-slide"><img src="img/aboutreel0.jpg"/></div>
+					//      centeredSlides: true,
+//					freeMode: true,
+					autoplay: 1,
+					speed: 3000,
+					autoplayDisableOnInteraction: false,
+					loop: true,
+					autoplayDisableOnInteraction : false,
+				});
+				//导航栏跳转
+				$('.dropdown-menu li a').click(function() {
+					var listid = $(this).attr('listid');
+					var navnum = $(this).attr('navnum');
+					catID = listid;
+					var myurl = "goods.html" + "?" + "listid=" + listid + "&navnum=" + navnum;
+					window.location.assign(myurl);
+				});
+
+				$('.dropdown-toggle').click(function() {
+					var $ul = $(this).next(); //标签的下一个元素
+					var $list = $ul.children("li").find("a"); //选择元素的子节点li的子节点a
+					//	console.log($list);
+					//	console.log($list.attr('listid'));
+					var listid = $list.attr('listid');
+					var navnum = $list.attr('navnum');
+					catID = listid;
+					navID = navnum;
+					//	goods();
+					//	loadInfo();
+					var myurl = "goods.html" + "?" + "listid=" + listid + "&navnum=" + navnum;
+					window.location.assign(myurl);
+				});
+				//悬停停止轮播
+//				$('.swiper-slide>img').hover(function(){
+//					swiper = new Swiper('.swiper-container', {autoplay: 50000000000,speed:5000000000});
+//				},function(){
+//					swiper = new Swiper('.swiper-container', {autoplay: 1,speed: 3000,});
+//				})
+			</script>
+	</body>
+
+</html>

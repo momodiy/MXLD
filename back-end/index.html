@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>管理首页</title>
+    <link type="text/css" rel="stylesheet" href="resource/css/framework.css" />
+    <link type="text/css" rel="stylesheet" href="resource/css/main.css" />
+</head>
+<body>
+<div class="page">
+<!--header begin-->
+<header>
+	<div class="bigcontainer">
+					<div id="logo">
+						<a href="./">曼秀雷敦</a>
+					</div>
+					<div class="user">
+						<div class="ui compact notif menu">
+							<a class="item">
+								<i class="mail large icon"></i>
+<!--								可输入未处理信息数目-->
+								<span class="circular floating ui small red label"> </span>
+							</a>
+						</div>
+						<div class="ui inline labeled icon top right pointing dropdown">
+							<img class="ui avatar image" src="resource/images/avatar-default.gif"> 欢迎:
+							<span>admin</span>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<a class="item" href="#"><i class="reply mail icon"></i>返回首页</a>
+								<a class="item" href="login.html"><i class="sign out icon"></i>注销登录</a>
+							</div>
+						</div>
+					</div>
+				</div>
+</header>
+<!-- the main menu-->
+<div class="ui teal inverted menu">
+	<div class="bigcontainer">
+		<div class="right menu">
+			<a class="active item" href="#"><i class="home icon"></i>主页</a>
+			<a class="item" href="./devices_list.html"><i class="sitemap icon"></i>查看商品</a>
+            <a class="item" href="change_goods.html"><i class="cloud icon"></i>修改商品</a>
+			<!--<a class="item" href="./user_profile.html"><i class="info icon"></i>账户</a>-->
+		</div>
+	</div>
+</div>
+
+<!--the main content begin-->
+	<div class="container">
+	<!--the content-->
+		<div class="pageHeader">
+			<div class="segment">
+				<h3 class="ui dividing header">
+  					<i class="large home icon"></i>
+  					<div class="content">
+    					管理首页
+    				<div class="sub header">快速查看和编辑</div>
+  					</div>
+				</h3>
+			</div>
+		</div>
+        <div class="ui warning message">
+            	<i class="close icon" data-dismiss="alert"></i>
+            <div class="header">
+            	<i class="warning icon"></i> 当前帐户还未备份.
+            </div>
+            为防止数据丢失，请检查注册时填写的账户信息，完成备份。
+            <!--<a href="#" title="重新发送激活邮件"></a>-->
+        </div>
+       <div class="ui small message" id="showApiKey">
+           <div class="ui form segment">
+                <div class="inline field">
+                   
+                   
+                    </a>
+                    <a id="deviceQuickButton" class="ui red small labeled icon button" href="./devices_list.html">
+                        <i class="settings icon"></i>管理所有商品
+                    </a>
+                </div>
+          </div>
+      </div>
+	<!--device list-->
+	<div class="ui three column grid" id="indexList">
+		<div class="row">
+			<div class="column">
+				<div class="ui blue segment">
+					<a href="devices_list.html" class="content">
+						<h4 class="deviceName">商品一</h4>
+						<p>洁净保湿&nbsp;提升活力</p>
+						<p class="deviceDescription">保湿活力洁面乳</p>
+						<p class="sensorStatus">150ml<br>
+						<img src="resource/images/60001a.jpg"/>
+                           
+                        </p>
+					</a>
+				</div>
+			</div>
+			<div class="column">
+				<div class="ui blue segment">
+					<a class="content" href="devices_list.html">
+						<h4 class="deviceName">商品二</h4>
+						<p>面试活力洁面泡沫</p>
+						<p class="deviceDescription">绵密弹力泡沫&nbsp;迅速彻底洁净</p>
+                        <p class="sensorStatus">150ml<br>
+                            <img src="resource/images/60002a.jpg"/>
+                        </p>
+					</a>
+				</div>
+			</div>
+			<div class="column">
+				<div class="ui blue segment">
+					<a class="content" href="devices_list.html">
+						<h4 class="deviceName">商品三</h4>
+						<p>能量保湿洁面膏</p>
+						<p class="deviceDescription">清洁保湿，提升活力</p>
+						<p class="sensorStatus">100g<br>
+                            <img src="resource/images/60003a.jpg"/>
+                        </p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--footer begin-->
+<footer>
+	<div id="copyrights">
+		<div class="inset">
+			<div class="bigcontainer">
+				<div class="fl">
+					<img src="resource/images/logo.png"/>
+					<p>&copy; 2020 曼秀雷敦化妆品有限公司, 版权所有 <a href="#" target="_blank">(qc)</a><br />
+<a href="#" target="_blank">鲁ICP备12022271号</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script type="text/javascript" src="resource/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="resource/javascript/framework.js"></script>
+<script type="text/javascript" src="resource/javascript/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="resource/javascript/alert.js"></script>
+<script>
+	$(document).ready(function(){
+//		实现跨浏览器复制功能
+		$('a#copy-apiKey').zclip({
+			path:'resource/javascript/ZeroClipboard.swf',
+			copy:function(){return $('input#apiKey').val();}
+		});
+
+		$('.ui.dropdown')
+			.dropdown();
+	});
+</script>
+</body>
+</html>

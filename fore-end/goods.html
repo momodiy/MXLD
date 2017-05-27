@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>曼秀雷敦商品页面</title>
+
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+
+		<style type="text/css">
+			.nav li {
+				margin-left: 20px;
+			}
+			
+			.nav {
+				padding-left: 50px;
+			}
+			
+			#totop{
+				z-index: 300;
+				/*border-radius: 50%;*/
+				position: fixed;
+				width: 40px;
+				height: 80px;
+				right: 0;
+				bottom: 0;
+			}
+			#attop{
+				position: fixed;top: 0;
+			}
+			.goods img{
+				width: 195px;
+				height: 250px;
+			}
+		</style>
+	</head>
+
+	<body ondragstart="return false">
+		<img src="img/totoplogo.png" id="totop" />
+		<!--<a href="#attop" target="_self" id="tt"><img src="img/totoplogo.png" id="totop"/></a>
+		<div id="attop"></div>-->
+		<div class="wrap">
+			<div class="head">
+				<div class="headTop">
+					<img src="img/logo.jpg" id="logo" />
+					<div id="headLink">
+						<span><a href="advert.html">广告片欣赏</a></span>
+						<span><a href="about.html">关于曼秀雷敦</a></span>
+						<span><a href="global.html" id="headImgwrap"><img src="img/head001.png" id="headImg1"/>全球曼秀雷敦</a></span>
+						<span id="headChose"><a href="#">曼秀雷敦家族网站&nbsp;&nbsp;▾
+							<ul id="headlist"><li>肌研护肤系列</li><li>男士护肤系列</li><li>乐肤洁抗痘系列</li><li>乐敦护眼系列</li></ul></a></span>
+					</div>
+				</div>
+			</div>
+			<!--导航栏-->
+			<div class="navwrap">
+				<div id="nav">
+					<ul class="nav nav-pills ">
+						<li>
+							<a id="testDemo" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								男士 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">OC控油清爽</a>
+								</li>
+								<li>
+									<a href="#">Hy保湿活力</a>
+								</li>
+								<li>
+									<a href="#">Hy Energy能量水活</a>
+								</li>
+								<li>
+									<a href="#">Po 多效活肤</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								肌研 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">极润保湿</a>
+								</li>
+								<li>
+									<a href="#">白润美白</a>
+								</li>
+								<li>
+									<a href="#">敏感肌呵护</a>
+								</li>
+								<li>
+									<a href="#">卵肌去角质</a>
+								</li>
+								<li>
+									<a href="#">弹力肌紧致</a>
+								</li>
+								<li>
+									<a href="#">肌呼吸焕颜</a>
+								</li>
+								<li>
+									<a href="#">透明质酸洗颜</a>
+								</li>
+								<li>
+									<a href="#">身体护理</a>
+								</li>
+								<li>
+									<a href="#">化妆品专供</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								新碧 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">日用防晒</a>
+								</li>
+								<li>
+									<a href="#">户外防晒</a>
+								</li>
+								<li>
+									<a href="#">儿童防晒</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								乐肤洁 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">抗痘系列</a>
+								</li>
+								<li>
+									<a href="#">控油系列</a>
+								</li>
+
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								护唇 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">天然果汁</a>
+								</li>
+								<li>
+									<a href="#">缤纷什果汁</a>
+								</li>
+								<li>
+									<a href="#">丰盈修护</a>
+								</li>
+								<li>
+									<a href="#">基础护理*儿童</a>
+								</li>
+								<li>
+									<a href="#">高纯羊毛脂</a>
+								</li>
+								<li>
+									<a href="#">水彩粉红</a>
+								</li>
+								<li>
+									<a href="#">自然变色</a>
+								</li>
+								<li>
+									<a href="#">甜吻润唇球</a>
+								</li>
+								<li>
+									<a href="#">薄荷*高保湿</a>
+								</li>
+								<li>
+									<a href="#">花果</a>
+								</li>
+								<li>
+									<a href="#">男士润唇膏</a>
+								</li>
+								<li>
+									<a href="#">美容液*唇膜</a>
+								</li>
+								<li>
+									<a href="#">透明淡彩</a>
+								</li>
+								<li>
+									<a href="#">淡彩啫喱</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								乐敦 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">新乐敦</a>
+								</li>
+								<li>
+									<a href="#">乐敦清</a>
+								</li>
+								<li>
+									<a href="#">红乐敦</a>
+								</li>
+								<li>
+									<a href="#">小乐敦</a>
+								</li>
+								<li>
+									<a href="#">乐敦莹</a>
+								</li>
+								<li>
+									<a href="#">乐敦康</a>
+								</li>
+								<li>
+									<a href="#">隐形眼镜护理液(保湿型)</a>
+								</li>
+								<li>
+									<a href="#">隐形眼镜护理液(冰凉型)</a>
+								</li>
+
+							</ul>
+						</li>
+						<!--<li>
+							<a href="#">薄荷膏</a>
+						</li>-->
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								薄荷膏 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">复方薄荷软膏</a>
+								</li>
+
+							</ul>
+						</li>
+
+						<li>
+							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false" href="#">
+								其他产品 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+								<li>
+									<a href="#">天然植物洁面</a>
+								</li>
+								<li>
+									<a href="#">草本美容液面霜</a>
+								</li>
+								<li>
+									<a href="#">花语舒缓润手霜</a>
+								</li>
+								<li>
+									<a href="#">Hand Veil润手霜</a>
+								</li>
+								<li>
+									<a href="#">润肤乳液</a>
+								</li>
+								<li>
+									<a href="#">乐碧止汗香体</a>
+								</li>
+								<li>
+									<a href="#">欧治洁面</a>
+								</li>
+								<li>
+									<a href="#">伤风通</a>
+								</li>
+								<li>
+									<a href="#">医用退热贴</a>
+								</li>
+								<li>
+									<a href="#">摩擦膏</a>
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--导航栏悬停显示内容-->
+			<div class="navcon">
+				<div class="leftnav">
+				</div>
+			</div>
+			<!--雪碧图-->
+			<div class="conlink">
+				<div>
+					<a href=""><span><span><img src="img/goodsimg3.gif"/></span><span>优惠</span></span>
+					</a>
+					<a href=""><span><span><img src="img/goodsimg1.gif"/></span><span>官网</span></span>
+					</a>
+					<a href=""><span><span><img src="img/goodsimg5.gif"/></span><span>TVC</span></span>
+					</a>
+				</div>
+			</div>
+			<!--内容-->
+			<div class="contentWrap">
+				<div class="left">
+					<div class="limg"><img id="limg" /></div>
+					<div class="listwrap">
+						<p style="font-size: 20px;"><strong>需求分类</strong></p>
+					</div>
+				</div>
+				<div class="right">
+					<!--数据库中获取到的商品信息-->
+					<div><img id="rimg" /></div>
+					<div class="goodswrap">
+						<!--商品样式demo-->
+						<!--<div class="goods">
+							<span><img src="img/001.jpg"/></span>
+							<div class="goodsname">
+								<p>保湿活力洁面乳</p>
+								<p>150ml</p>
+							</div>
+							<div class="goodsE">
+								Hydrating Face Wash
+							</div>
+							<div class="goodsC">
+								清洁保湿 提升活力
+							</div>
+							<div class="goodsbtn">查看</div>
+						</div>-->
+
+					</div>
+				</div>
+			</div>
+			<!--底部-->
+			<div class="footwrap">
+				<div class="topfoot">
+
+					<div class="TFleft">
+						<img src="img/footleft1.png" id="foot_img1" />
+						<div id="footcon">
+							<span id="tellus">联系我们</span>
+							<img src="img/footleft2.gif" id="foot_img2" />
+						</div>
+						<div id="foot_left_wrap">
+							<div class="flw1">
+								<p>
+									<span>产品咨询热线</span>
+								</p>
+								<p>
+									<span>人工咨询时间</span>
+								</p>
+								<p>
+									<span>客&nbsp;&nbsp;服&nbsp;&nbsp;邮&nbsp;&nbsp;箱</span>
+								</p>
+							</div>
+							<div class="flw2">
+								<p>
+									<span>400-700-7708</span>
+								</p>
+								<p>
+									<span>周一至周五（节假日除外）9:00-12:00,13:00-16-00</span>
+								</p>
+								<p>
+									<span>mcl-cs@mentholatum.com.cn</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="TFright">
+						<div class="blt1">
+							<span class="focus"><img src="img/footright1.png"/></span>
+							<span class="focusus">关注我们<img src="img/footright2.gif"/>
+						</span>
+						</div>
+						<div class="blt2">
+							<div class="blt21">
+								<p><span><img src="img/weibo_logo.gif"/></span>关注微博</p>
+								<img src="img/weibo_code.jpg" />
+							</div>
+							<div class="blt22">
+								<p><span><img src="img/weixin_iogo.gif"/></span>关注微信</p>
+								<img src="img/weixin_code.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="botfoot">
+					<p id="footAbout1">2014-2016曼秀雷敦公司版权所有粤ICP备12090187|联系我们</p>
+					<p id="footAbout2"><img src="img/icp.png" />粤公网安备44200002005188号</p>
+				</div>
+
+			</div>
+			<script type="text/javascript" src="js/public.js"></script>
+			<script type="text/javascript" src="js/goods.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/goods.css" />
+			<script type="text/javascript">
+//			$('.totop').click('click_scroll');
+				function click_scroll() {
+					var scroll_offset = $("#pos").offset(); //得到pos这个div层的offset，包含两个值，top和left
+					$("body,html").animate({
+						scrollTop: scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+					}, 0);
+				}
+				var totopBtn=document.getElementById('totop');
+//				totopBtn.onclick=goTop();
+				//置顶按钮？
+				totopBtn.onclick=function goTop(acceleration, time) {
+	acceleration = acceleration || 0.1;
+	time = time || 16;
+	var x1 = 0;
+	var y1 = 0;
+	var x2 = 0;
+	var y2 = 0;
+	var x3 = 0;
+	var y3 = 0;
+
+	if(document.documentElement) {
+		x1 = document.documentElement.scrollLeft;
+		y1 = document.documentElement.scrollTop;
+	}
+
+	if(document.body) {
+		x2 = document.body.scrollLeft;
+		y2 = document.body.scrollTop;
+	}
+
+	var x3 = window.scrollX;
+	var y3 = window.scrollY;
+	// 滚动条到页面顶部的水平距离
+	var x = Math.max(x1, Math.max(x2, x3));
+	//  滚动条到页面顶部的垂直距离
+	var y = Math.max(y1, Math.max(y2, y3));
+	var speed = 1 + acceleration;
+	window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+	//  如果距离不为零 继续调用迭代本函数
+
+	if(x > 0 || y > 0) {
+		var invokeFunction = "goTop(" + acceleration + ", " + time + ")";
+		window.setTimeout(invokeFunction, time);
+	}
+}
+			</script>
+
+	</body>
+
+</html>

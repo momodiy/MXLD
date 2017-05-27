@@ -1,0 +1,321 @@
+/*设置图片不可选中*/
+.wrap {
+	width: 100%;
+	position: relative;
+}
+
+* {
+	padding: 0;
+	margin: 0 auto;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.head {
+	width: 960px;
+	height: 150px;
+	text-align: center;
+}
+
+.headTop {
+	height: 80px;
+}
+
+#logo {
+	margin: 10px 0px 0px -200px;
+}
+
+#headLink {
+	height: 42px;
+	width: 550px;
+	font-size: 9px;
+	display: inline-block;
+	float: right;
+	margin-right: 80px;
+	margin-top: 50px;
+	position: relative;
+	z-index: 30;
+	/*background: forestgreen;*/
+}
+
+#headLink a {
+	text-decoration: none;
+}
+
+#headLink>span {
+	display: inline-block;
+	/*border: 1px solid seagreen;*/
+	width: 130px;
+	margin-left: 7px;
+}
+
+#headLink>span:nth-child(4) {
+	line-height: 22px;
+}
+
+#headLink a:hover {
+	color: rgb(0, 168, 255);
+}
+
+#headLink>#headChose {
+	width: 120px;
+	height: 20px;
+	float: right;
+	display: inline-block;
+}
+
+#headlist {
+	background: white;
+	list-style-type: none;
+	display: none;
+}
+
+#headlist li {
+	padding: 5px 17px 0 10px;
+}
+
+#headlist li:hover {
+	color: rgb(0, 168, 255);
+}
+
+#headlist>li:hover #headlist {
+	color: rgb(0, 168, 255);
+}
+
+
+/*导航栏样式*/
+
+#nav {
+	width: 1060px;
+	height: 42px;
+	text-align: center;
+	margin: auto;
+	margin-top: -30px;
+	margin-bottom: -1px;
+}
+
+#nav * {
+	margin: auto;
+	text-align: center;
+	margin: 0px 5px;
+	color: darkslategrey;
+}
+
+.nav-pills a {
+	margin-left: 10px;
+}
+
+.nav * {
+	font-size: 17px;
+}
+
+.navwrap {
+	height: 43px;
+	width: 100%;
+	background: rgb(0, 168, 255);
+}
+
+.footwrap {
+	width: 100%;
+	height: 370px;
+	margin-top: 100px;
+	border-top: 1px solid lightgray;
+}
+
+.topfoot {
+	width: 960px;
+	height: 300px;
+}
+
+
+/*尾部样式*/
+
+.TFleft {
+	float: left;
+	width: 40.5%;
+	height: 70%;
+	margin: 50px 10px 50px 75px;
+	position: relative;
+}
+
+#footcon {
+	width: 150px;
+	height: 50px;
+	display: inline-block;
+	line-height: 70px;
+	font-weight: 600;
+	/*font-size: 25px;*/
+}
+
+#foot_left_wrap {
+	width: 100%;
+	clear: both;
+	font-size: 12px;
+	height: 130px;
+}
+
+#foot_left_wrap>p {
+	margin-top: 15px;
+}
+
+#foot_img1,
+#footcon {
+	float: left;
+}
+
+.flw1 p,
+.flw2 p {
+	margin-top: 35px;
+	text-align: left;
+}
+
+.flw2 p:nth-child(1) {
+	font-size: 16px;
+	color: rgb(0, 168, 255);
+}
+
+.flw2 p:nth-child(1) span {
+	color: rgb(0, 168, 255);
+}
+
+.flw2 p:nth-child(2) span,
+.flw2 p:nth-child(3) span {
+	color: rgb(47, 187, 255);
+}
+
+.flw1 {
+	width: 24%;
+	height: 100%;
+	display: inline-block;
+	font-size: 12px;
+	color: rgb(166, 167, 187);
+}
+
+.flw1 * {
+	color: rgb(166, 167, 187);
+}
+
+.flw2 {
+	width: 73%;
+	height: 100%;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.TFright {
+	float: right;
+	width: 40.5%;
+	height: 70%;
+	margin: 50px 75px 50px 10px;
+	/*border: 1px solid red;*/
+	border-left: 1px solid lightgrey;
+}
+
+.focus {
+	float: left;
+}
+
+.focusus {
+	float: left;
+	line-height: 80px;
+}
+
+.blt2 {
+	width: 100%;
+	height: 65%;
+	/*border: 1px solid chartreuse;*/
+	clear: both;
+}
+
+.blt21,
+.blt22 {
+	display: inline-block;
+	height: 100%;
+	width: 28%;
+	/*border: 1px solid forestgreen;*/
+	margin: 0px 8%;
+}
+
+.footwrap {
+	clear: both;
+}
+
+
+/*页脚*/
+
+.botfoot {
+	width: 960px;
+	height: 110px;
+	color: grey;
+	font-size: 10px;
+	position: relative;
+}
+
+#footAbout1 {
+	position: absolute;
+	left: 36.5%;
+	top: 0px;
+	color: lightslategrey;
+}
+
+#footAbout2 {
+	position: absolute;
+	left: 43%;
+	top: 40px;
+	color: lightslategrey;
+}
+
+#footAbout2:hover {
+	cursor: pointer;
+	color: black;
+}
+
+
+/*轮播图*/
+
+.swiper-container {
+	min-width: 1000px;
+	width: 100%;
+	height: 550px;
+	margin-top: -2px;
+	/*margin: 20px auto;*/
+	/*border: 1px solid black;*/
+}
+
+.swiper-slide {
+	/*border: 1px solid black;*/
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	margin-top: -87px;
+	/*width: 600px;*/
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.swiper-pagination {
+	padding-top: -20px;
+	margin-top: -50px;
+}
